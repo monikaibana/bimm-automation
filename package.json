@@ -1,0 +1,22 @@
+{
+  "name": "bimm-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monikaibana/bimm-automation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monikaibana/bimm-automation/issues"
+  },
+  "homepage": "https://github.com/monikaibana/bimm-automation#readme",
+  "devDependencies": {
+    "cypress": "^13.3.0"
+  }
+}
