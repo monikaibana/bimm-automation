@@ -9,6 +9,6 @@ module.exports = defineConfig({
     supportFile: 'cypress/support/e2e.js',
     testIsolation: false, // prevent navigating to blank page after each test
   },
-  experimentalModifyObstructiveThirdPartyCode: true, // quiet CORS error
-  chromeWebSecurity: false, // quiet CORS error
+  experimentalModifyObstructiveThirdPartyCode: true, // to quiet the CORS error
+  chromeWebSecurity: false, // to quiet the CORS error
 });

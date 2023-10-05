@@ -10,7 +10,7 @@ describe('Practice Form Tests', () => {
   });
 
   it('should be able to enter all fields with valid input and submit successfully', () => {
-    cy.fixture('practice_form').then((practiceForm) => {
+    cy.fixture('practice-form').then((practiceForm) => {
       const input = practiceForm.validInput;
       fillOutForm(input);
       submitForm();
@@ -19,7 +19,7 @@ describe('Practice Form Tests', () => {
   });
 
   it('should not submit with invalid email and phone inputs', () => {
-    cy.fixture('practice_form').then((practiceForm) => {
+    cy.fixture('practice-form').then((practiceForm) => {
       const input = practiceForm.invalidInput;
       fillOutForm(input);
       submitForm();

@@ -25,7 +25,7 @@ describe('Browser Window Tests', () => {
   });
 
   it('should open new window with message', () => {
-    cy.fixture('browser_windows').then((browserWindows) => {
+    cy.fixture('browser-windows').then((browserWindows) => {
       const message = browserWindows.messageWindow;
       cy.get('#messageWindowButton').click();
       cy.get('body').should('have.text', message);
