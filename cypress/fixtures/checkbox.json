@@ -1,0 +1,42 @@
+{
+  "homeCheckbox": [
+    "home",
+    "desktop",
+    "notes",
+    "commands",
+    "documents",
+    "workspace",
+    "react",
+    "angular",
+    "veu",
+    "office",
+    "public",
+    "private",
+    "classified",
+    "general",
+    "downloads",
+    "wordFile",
+    "excelFile"
+  ],
+  "documentsCheckbox": [
+    "documents",
+    "workspace",
+    "react",
+    "angular",
+    "veu",
+    "office",
+    "public",
+    "private",
+    "classified",
+    "general"
+  ],
+  "reactUncheckedCheckbox": [
+    "angular",
+    "veu",
+    "office",
+    "public",
+    "private",
+    "classified",
+    "general"
+  ]
+}
