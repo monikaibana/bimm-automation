@@ -15,7 +15,6 @@ describe('Checkbox Tests', () => {
   });
 
   it('should check Home checkbox', () => {
-    // tag: smoke
     cy.fixture('checkbox').then((checkbox) => {
       const selectedCheckboxes = checkbox.homeCheckbox;
       cy.get('#tree-node-home"]').click({ force: true });
@@ -53,8 +52,4 @@ describe('Checkbox Tests', () => {
         });
     });
   });
-
-  //   it('should be disabled when checking No', () => {
-  //     cy.get('#noRadio"]').should('be.disabled');
-  //   });
 });
