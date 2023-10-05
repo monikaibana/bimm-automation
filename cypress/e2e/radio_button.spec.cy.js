@@ -4,16 +4,16 @@ describe('Radio Button Tests', () => {
   });
 
   it('should check Yes', () => {
-    cy.get('#yesRadio"]').click({ force: true });
+    cy.get('#yesRadio').click({ force: true });
     cy.get('.text-success').should('have.text', 'Yes');
   });
 
   it('should check Impressive', () => {
-    cy.get('#impressiveRadio"]').click({ force: true });
+    cy.get('#impressiveRadio').click({ force: true });
     cy.get('.text-success').should('have.text', 'Impressive');
   });
 
   it('should be disabled, cannot check No', () => {
-    cy.get('#noRadio"]').should('be.disabled');
+    cy.get('#noRadio').should('be.disabled');
   });
 });

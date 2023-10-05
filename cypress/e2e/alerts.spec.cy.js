@@ -4,7 +4,7 @@ describe('Alerts Tests', () => {
   });
 
   it('should see alert', () => {
-    cy.get('#alertButton"]').click();
+    cy.get('#alertButton').click();
     cy.on('window:alert', (t) => {
       expect(t).to.contains('You clicked a button');
     });
@@ -12,7 +12,7 @@ describe('Alerts Tests', () => {
   });
 
   it('should see alert after 5 seconds', () => {
-    cy.get('#timerAlertButton"]').click();
+    cy.get('#timerAlertButton').click();
     cy.wait(5000);
     cy.on('window:alert', (t) => {
       expect(t).to.contains('This alert appeared after 5 seconds');
@@ -21,7 +21,7 @@ describe('Alerts Tests', () => {
   });
 
   it('should be able to confirm action', () => {
-    cy.get('#confirmButton"]').click();
+    cy.get('#confirmButton').click();
     cy.on('window:alert', (t) => {
       expect(t).to.contains('Do you confirm action?');
     });
@@ -30,7 +30,7 @@ describe('Alerts Tests', () => {
   });
 
   it('should be able to cancel action', () => {
-    cy.get('#confirmButton"]').click();
+    cy.get('#confirmButton').click();
     cy.on('window:alert', (t) => {
       expect(t).to.contains('Do you confirm action?');
     });
@@ -42,7 +42,7 @@ describe('Alerts Tests', () => {
     cy.window().then(($win) => {
       cy.stub($win, 'prompt').returns('test text');
     });
-    cy.get('#promtButton"]').click();
+    cy.get('#promtButton').click();
     cy.on('window:alert', (t) => {
       expect(t).to.contains('Please enter your name');
     });
