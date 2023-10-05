@@ -5,6 +5,8 @@ export function fillOutForm(input) {
   cy.get('#firstName').type(input.firstName);
   cy.get('#lastName').type(input.lastName);
   cy.get('#userEmail').type(input.userEmail);
+
+  // test input is a string, used indexOf to get the corresponding classname for radio button
   cy.get(`#gender-radio-${genderArr.indexOf(input.gender) + 1}`).click({
     force: true,
   });
@@ -12,16 +14,20 @@ export function fillOutForm(input) {
 
   selectDateWithDatePicker(input.dateOfBirth);
 
+  // used forEach because the field can have accept multiple input values
   input['subjects'].forEach((val) => {
     cy.get('#subjectsContainer').type(`${val}{enter}`);
   });
 
+  // used forEach and indexOf to account for multiple input values and corresponding classnames
   input['hobbies'].forEach((val) => {
     let subject = subjectArr.indexOf(val) + 1;
     cy.get(`#hobbies-checkbox-${subject}`).click({ force: true });
   });
 
+  // the form does not validate the file type, so this generates a text file to upload
   cy.get('#uploadPicture').selectFile(`cypress/e2e/${input.fileName}`);
+
   cy.get('#currentAddress').type(input.currentAddress);
   cy.get('#state').type(`${input.state}{enter}`);
   cy.get('#city').type(`${input.city}{enter}`);

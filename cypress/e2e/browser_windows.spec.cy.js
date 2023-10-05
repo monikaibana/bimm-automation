@@ -1,5 +1,10 @@
 describe('Browser Window Tests', () => {
-  // Due limitations in Cypress, for these tests, the button click redirects within the same browser window to continue asserting the new web page
+  /* 
+  Note: Due to Cypress limitations, the new tab and new window opened within the test cannot be interacted with.
+  Cypress only remains interactive with the origin browser. I implemented the cy.stub line of code to open the url
+  within the existing browser to at least validate that the expected page is opened.
+  */
+
   beforeEach(() => {
     cy.visit('/browser-windows');
     cy.window().then((win) => {
