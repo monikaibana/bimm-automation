@@ -9,7 +9,8 @@ export function fillOutForm(input) {
     force: true,
   });
   cy.get('#userNumber').type(input.userNumber);
-  cy.get('#dateOfBirthInput'); // finish
+
+  selectDateWithDatePicker(input.dateOfBirth);
 
   input['subjects'].forEach((val) => {
     cy.get('#subjectsContainer').type(`${val}{enter}`);
@@ -20,7 +21,7 @@ export function fillOutForm(input) {
     cy.get(`#hobbies-checkbox-${subject}`).click({ force: true });
   });
 
-  cy.get('#uploadPicture').selectFile('cypress/e2e/test.txt');
+  cy.get('#uploadPicture').selectFile(`cypress/e2e/${input.fileName}`);
   cy.get('#currentAddress').type(input.currentAddress);
   cy.get('#state').type(`${input.state}{enter}`);
   cy.get('#city').type(`${input.city}{enter}`);
@@ -60,7 +61,7 @@ export function validateFormSubmission(input) {
   cy.contains('td', 'Date of Birth')
     .parent()
     .within(() => {
-      cy.contains('td', '05 October,2023').should('be.visible');
+      cy.contains('td', input.dateOfBirth).should('be.visible');
     });
   cy.contains('td', 'Subjects')
     .parent()
@@ -75,7 +76,7 @@ export function validateFormSubmission(input) {
   cy.contains('td', 'Picture')
     .parent()
     .within(() => {
-      cy.contains('td', 'test.txt').should('be.visible');
+      cy.contains('td', input.fileName).should('be.visible');
     });
   cy.contains('td', 'Address')
     .parent()
@@ -87,6 +88,20 @@ export function validateFormSubmission(input) {
     .within(() => {
       cy.contains('td', `${input.state} ${input.city}`).should('be.visible');
     });
+}
+
+function selectDateWithDatePicker(dateOfBirth) {
+  // function to format date from the test data and select from date picker
+  const date = new Date(dateOfBirth);
+  let dob = {
+    month: date.getMonth().toString(),
+    year: date.getFullYear().toString(),
+    day: date.getDate().toString(),
+  };
+  cy.get('#dateOfBirthInput').click();
+  cy.get('.react-datepicker__month-select').select(dob.month);
+  cy.get('.react-datepicker__year-select').select(dob.year);
+  cy.get('.react-datepicker__month').contains(dob.day).click();
 }
 
 export default { fillOutForm, submitForm, validateFormSubmission };
