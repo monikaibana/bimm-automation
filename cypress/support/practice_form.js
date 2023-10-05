@@ -1,6 +1,6 @@
 export function fillOutForm(input) {
   const genderArr = ['Male', 'Female', 'Other'];
-  const subjectArr = ['Sprots', 'Reading', 'Music'];
+  const subjectArr = ['Sports', 'Reading', 'Music'];
 
   cy.get('#firstName').type(input.firstName);
   cy.get('#lastName').type(input.lastName);
@@ -25,7 +25,7 @@ export function fillOutForm(input) {
     cy.get(`#hobbies-checkbox-${subject}`).click({ force: true });
   });
 
-  // the form does not validate the file type, so this generates a text file to upload
+  // the form does not validate the file type, so I just generate a text file to upload
   cy.get('#uploadPicture').selectFile(`cypress/e2e/${input.fileName}`);
 
   cy.get('#currentAddress').type(input.currentAddress);
