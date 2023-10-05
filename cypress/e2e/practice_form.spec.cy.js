@@ -9,13 +9,16 @@ describe('Practice Form Tests', () => {
     cy.visit('/automation-practice-form');
   });
 
-  it('should be able to enter all fields with valid input and submit successfully', () => {
-    fillOutForm();
-    submitForm();
-    validateFormSubmission();
+  it.only('should be able to enter all fields with valid input and submit successfully', () => {
+    cy.fixture('practice_form').then((practiceForm) => {
+      const input = practiceForm.validInput;
+      fillOutForm(input);
+      submitForm();
+      validateFormSubmission(input);
+    });
   });
 
-  it.only('should not be able to submit with empty required fields', () => {
+  it('should not be able to submit with empty required fields', () => {
     const reqFields = [
       'userForm',
       'firstName',
