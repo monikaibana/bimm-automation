@@ -7,8 +7,8 @@ module.exports = defineConfig({
     },
     baseUrl: 'https://demoqa.com/',
     supportFile: 'cypress/support/e2e.js',
-    testIsolation: false,
+    testIsolation: false, // prevent navigating to blank page after each test
   },
-  experimentalModifyObstructiveThirdPartyCode: true,
-  chromeWebSecurity: false,
+  experimentalModifyObstructiveThirdPartyCode: true, // quiet CORS error
+  chromeWebSecurity: false, // quiet CORS error
 });
