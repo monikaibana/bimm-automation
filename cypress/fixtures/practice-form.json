@@ -1,0 +1,30 @@
+{
+  "validInput": {
+    "firstName": "Monika",
+    "lastName": "Ibana",
+    "userEmail": "monika@test.com",
+    "gender": "Female",
+    "userNumber": "4165555555",
+    "dateOfBirth": "04 August,1997",
+    "subjects": ["Maths", "English"],
+    "hobbies": ["Reading", "Music"],
+    "fileName": "test.txt",
+    "currentAddress": "100 Yonge Street",
+    "state": "NCR",
+    "city": "Delhi"
+  },
+  "invalidInput": {
+    "firstName": "Monika",
+    "lastName": "Ibana",
+    "userEmail": "monika@",
+    "gender": "Female",
+    "userNumber": "not a number",
+    "dateOfBirth": "04 August,1997",
+    "subjects": ["Maths"],
+    "hobbies": ["Reading"],
+    "fileName": "test.txt",
+    "currentAddress": "100 Yonge Street",
+    "state": "NCR",
+    "city": "Delhi"
+  }
+}

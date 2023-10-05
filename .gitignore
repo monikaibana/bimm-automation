@@ -1,0 +1,3 @@
+/node_modules
+# ignore generate test txt file
+test.txt
